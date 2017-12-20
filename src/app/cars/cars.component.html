@@ -1,3 +1,11 @@
-<app-car></app-car>
-<app-car></app-car>
-<app-car></app-car>
+
+<input type="text" class="form-control" [(ngModel)]="carName">
+<hr>
+<input type="text" class="form-control" [(ngModel)]="carYear">
+<hr>
+<button class="btn btn-primary" (click)="addCar()">Add Car</button>
+<hr>
+
+<app-car *ngFor="let car of cars" >	
+</app-car>
+
