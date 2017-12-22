@@ -6,43 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../../node_modules/bootstrap/dist/css/bootstrap.min.css', './cars.component.css']
 })
 
-
 export class CarsComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
-
-
   }
-
-  setText: string = 'Default text';
-
-  cars = [
+  
+  cars: [{id:number,name:string,year:number}] = [
 		{
 		  	id: 1,
 		  	name: "Audi",
-		  	year: '1999'
+		  	year: 1999
 		},
 		{
 		  	id: 2,
 		  	name: "BMW",
-		  	year: '2005'
+		  	year: 2005
 		},
 		{
 		  	id: 3,
 		  	name: "Toyota",
-		  	year: '2012'
+		  	year: 2012
 		},	 
   ]
 
-  addCar(){
-  	this.cars.push({
-  		name: this.carName,
-  		year: this.carYear
-  	});
-  	this.carName = '';
-  	this.carYear = 2017;
+  updateCarList(car:{id:number,name:string,year:number}){
+    this.cars.push(car);
   }
 
 }
