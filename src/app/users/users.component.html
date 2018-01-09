@@ -1,0 +1,3 @@
+<app-add-user (addObservable)="updateUsers($event)"></app-add-user>
+<hr>
+<app-user *ngFor=" let user of users " [userItem]="user"></app-user>
