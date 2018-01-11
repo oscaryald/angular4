@@ -1,4 +1,11 @@
-import { Directive, ElementRef, OnInit, Renderer2, HostBinding, HostListener } from '@angular/core';
+import { 
+Directive,
+ ElementRef,
+  OnInit,
+   Renderer2,
+    HostBinding,
+     HostListener,
+      Input } from '@angular/core';
 
 @Directive({
   selector: '[appExample1]'
@@ -14,7 +21,7 @@ export class Example1Directive {
   	this.renderer.setStyle(nativeElement, 'background-color', '#eee')
   }
 
-  /*** second example ***/
+  /*** second example for cars ***/
   @HostBinding('style.background') background:string = "#eee";
 
   @HostListener('mouseenter') mouseEnter(){
@@ -23,6 +30,18 @@ export class Example1Directive {
 
   @HostListener('mouseleave') mouseLeave(){
   	this.background = 'transparent';
+  }
+
+  /*** third example for users ***/
+  @Input() hoverColor: string;
+  @Input() defaultColor: string;
+  
+  @HostListener('mouseenter') mouseEnter2(){
+    this.background = this.hoverColor !== undefined ? this.hoverColor : 'green'
+  }
+
+  @HostListener('mouseleave') mouseLeave2(){
+    this.background = this.defaultColor
   }
   	
 }

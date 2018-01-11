@@ -14,12 +14,12 @@ export class AddCarComponent implements OnInit {
 
   id = 0; 
   name = "Default car";
-  year = 2017;
+  year = '2017';
 
   car = {};
 
   @Output() 
-  onAddCar = new EventEmitter<{id:number,name:string,year:number}>();
+  onAddCar = new EventEmitter<{id:number,name:string,year:string}>();
 
   addCar(){
   	this.car = {

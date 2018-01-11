@@ -1,3 +1,23 @@
 <app-add-user (addObservable)="updateUsers($event)"></app-add-user>
 <hr>
 <app-user *ngFor=" let user of users " [userItem]="user"></app-user>
+<hr>
+<p>Example for tabs</p>
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let item of items" (click)="changeTab(item, $event)">
+		{{item}}
+	</li>
+</ul>
+<p>
+	{{current}}
+</p>
+<div [ngSwitch]="current">
+	<p *ngSwitchCase="1">Tab 1</p>
+	<p *ngSwitchCase="2">Tab 2</p>
+	<p *ngSwitchCase="3">Tab 3</p>
+	<p *ngSwitchDefault>Default tab</p>
+</div>
+<hr>
+<p>Pipe example:</p>
+<p>{{pow | pow: 3 }}</p>
+<hr>

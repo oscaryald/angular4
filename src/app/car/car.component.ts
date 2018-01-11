@@ -17,7 +17,7 @@ export class CarComponent implements OnInit {
   carItem: [{
     id:number,
     name:string,
-    year:number
+    year:string
   }]
 
 

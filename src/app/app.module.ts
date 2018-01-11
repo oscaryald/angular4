@@ -13,6 +13,8 @@ import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { Example1Directive } from './directives/example-1.directive';
+import { PowPipe } from './pipe-example/pow.pipe';
+import { CarFilterPipe } from './pipe-example/car-filter.pipe';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { Example1Directive } from './directives/example-1.directive';
     UserComponent,
     UsersComponent,
     AddUserComponent,
-    Example1Directive
+    Example1Directive,
+    PowPipe,
+    CarFilterPipe
   ],
   imports: [
     BrowserModule,

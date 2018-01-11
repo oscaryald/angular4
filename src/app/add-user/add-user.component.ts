@@ -12,6 +12,9 @@ export class AddUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  id:number;
+  name:string;
+
 
   @Output()
   addObservable = new EventEmitter<{id:number, name:string}>();
