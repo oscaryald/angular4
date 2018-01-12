@@ -15,6 +15,10 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { Example1Directive } from './directives/example-1.directive';
 import { PowPipe } from './pipe-example/pow.pipe';
 import { CarFilterPipe } from './pipe-example/car-filter.pipe';
+import { ProductComponent } from './example-service/product/product.component';
+import { ProductServiceService } from './example-service/product-service.service';
+import { ProductItemComponent } from './example-service/product-item/product-item.component';
+import { AddProductItemComponent } from './example-service/add-product-item/add-product-item.component';
 
 
 @NgModule({
@@ -28,13 +32,16 @@ import { CarFilterPipe } from './pipe-example/car-filter.pipe';
     AddUserComponent,
     Example1Directive,
     PowPipe,
-    CarFilterPipe
+    CarFilterPipe,
+    ProductComponent,
+    ProductItemComponent,
+    AddProductItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

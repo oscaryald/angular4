@@ -1,0 +1,8 @@
+<ul class="list-group">
+	<li [ngClass]="setClass()">
+		{{productItem.name}}
+		<br>
+		<button (click)="onAction('buy')">Add</button>
+		<button (click)="onAction('remove')">Remove</button>
+	</li>
+</ul>
