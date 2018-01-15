@@ -1,0 +1,76 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+
+	<div ngModelGroup="user" #user="ngModelGroup">
+		<div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+			<label for="email">Email:</label>
+			<input 
+				type="text"
+				class="form-control"
+				ngModel
+				name="email"
+				required
+				email
+				#email="ngModel"
+			>
+			<p *ngIf="email.invalid && email.touched"> not valid email!</p>
+			<hr>
+			<a (click)="addRandEmail()" class="btn">Add Email</a>
+		</div>
+		<div class="form-group" [ngClass]="{'has-error': password.invalid && password.touched}">
+			<label for="password">Password:</label>
+			<input 
+				type="password"
+				class="form-control"
+				ngModel
+				name="password"
+				required
+				#password="ngModel"
+			>
+			<p *ngIf="password.invalid && password.touched"> not valid password</p>
+		</div>
+		<div *ngIf="user.invalid && user.touched">Personal data is not valid</div>
+	</div>
+
+	<div class="form-group">
+			<label for="country">Country:</label>
+			<select 
+				class="form-control"
+				[ngModel]="defaultCountry"
+				name="country"
+				required
+				#country="ngModel"
+			>
+				<option value="us">USA</option>
+				<option value="ua">Ukraine</option>
+				<option value="gb">Britain</option>
+			</select>
+			
+	</div>
+
+	<div class="radio" *ngFor="let answer of answers">
+		<label for="answer">
+			<input 
+				type="radio"
+				required
+				[value]="answer.type"
+				[ngModel]="defaultAnswer"
+				name="answer"
+			>{{answer.text}}
+		</label>	
+	</div>
+
+	<button 
+			class="btn btn-success"
+			type="submit"
+			[disabled]="!form.valid"
+			>
+			Submited
+	</button>
+
+	<div *ngIf="isSubmited">
+		<h3>Data from ngForm</h3>
+		<pre>
+			{{ formData | json }}
+		</pre>
+	</div>
+</form>

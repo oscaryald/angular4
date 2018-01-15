@@ -12,7 +12,7 @@ export class AddProductItemComponent implements OnInit {
 
   products = [];
 
-  OnInit(){
+  ngOnInit(){
   	this.products = this.productService.products;
   }
 

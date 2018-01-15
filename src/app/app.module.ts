@@ -19,6 +19,7 @@ import { ProductComponent } from './example-service/product/product.component';
 import { ProductServiceService } from './example-service/product-service.service';
 import { ProductItemComponent } from './example-service/product-item/product-item.component';
 import { AddProductItemComponent } from './example-service/add-product-item/add-product-item.component';
+import { Form1Component } from './form1/form1.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AddProductItemComponent } from './example-service/add-product-item/add-
     CarFilterPipe,
     ProductComponent,
     ProductItemComponent,
-    AddProductItemComponent
+    AddProductItemComponent,
+    Form1Component
   ],
   imports: [
     BrowserModule,
