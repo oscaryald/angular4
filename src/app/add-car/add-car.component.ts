@@ -16,7 +16,7 @@ export class AddCarComponent implements OnInit {
   name = "Default car";
   year = '2017';
 
-  car = {};
+  car:{id:number,name:string,year:string}
 
   @Output() 
   onAddCar = new EventEmitter<{id:number,name:string,year:string}>();

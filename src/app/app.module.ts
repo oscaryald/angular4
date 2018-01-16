@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +20,7 @@ import { ProductServiceService } from './example-service/product-service.service
 import { ProductItemComponent } from './example-service/product-item/product-item.component';
 import { AddProductItemComponent } from './example-service/add-product-item/add-product-item.component';
 import { Form1Component } from './form1/form1.component';
+import { Form2Component } from './form2/form2.component';
 
 
 @NgModule({
@@ -37,11 +38,13 @@ import { Form1Component } from './form1/form1.component';
     ProductComponent,
     ProductItemComponent,
     AddProductItemComponent,
-    Form1Component
+    Form1Component,
+    Form2Component
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductServiceService],
   bootstrap: [AppComponent]

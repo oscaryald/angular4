@@ -19,7 +19,7 @@ export class AddUserComponent implements OnInit {
   @Output()
   addObservable = new EventEmitter<{id:number, name:string}>();
 
-  user = {}
+  user: {id:number, name:string}
 
   addUser(){
   	this.user = {

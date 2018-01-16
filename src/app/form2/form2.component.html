@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+	<div formGroupName="user">
+		<div class="form-group" [ngClass]="{'has-error': form.get('user.password').invalid && form.get('user.password').touched}">
+			<label for="email">Email:</label>
+			<input 
+				type="text"
+				class="form-control"
+				formControlName="email"
+			>
+			<p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">
+				email is incorect!
+			</p>
+		</div>
+		<div class="form-group" [ngClass]="{'has-error': form.get('user.password').invalid && form.get('user.password').touched}">
+			<label for="password">Password:</label>
+			<input 
+				type="password"
+				class="form-control"
+				formControlName="password"
+			>
+			<p *ngIf="form.get('user.password').invalid && form.get('user.password').touched">
+				<span *ngIf="form.get('user.password').errors['required'] && form.get('user.password').touched">password is incorect!</span>
+				<span *ngIf="form.get('user.password').errors['lengthError'] && form.get('user.password').touched">password length is more over {{charsCount}} symbols!</span>
+			</p>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+			<label for="country">Country:</label>
+			<select 
+				class="form-control"
+				formControlName="country"
+				required
+			>
+				<option value="us">USA</option>
+				<option value="ua">Ukraine</option>
+				<option value="gb">Britain</option>
+			</select>
+			
+	</div>
+
+	<div class="radio" *ngFor="let answer of answers">
+		<label for="answer">
+			<input 
+				type="radio"
+				required
+				formControlName="answer"
+				[value]="answer.type"
+			>
+		</label> {{answer.text}}
+	</div>
+
+	<button 
+			class="btn btn-success"
+			type="submit"
+			[disabled]="form.invalid"
+			>
+			Submited
+	</button>
+</form>
+
