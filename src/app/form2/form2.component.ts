@@ -30,7 +30,7 @@ export class Form2Component implements OnInit {
   		user: new FormGroup({
   			email: new FormControl('', [Validators.required, Validators.email]),
   			password: new FormControl('', [Validators.required, this.checkForLength.bind(this)]),
-  		})
+  		}),
   		country: new FormControl('ua'),
   		answer: new FormControl('no'),
   	})

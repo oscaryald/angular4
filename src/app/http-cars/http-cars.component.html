@@ -1,0 +1,12 @@
+
+<input class="form-control" [(ngModel)]="carName" type="text">
+<hr>
+<button class="btn" (click)="loadCars()"> Load Cars...</button> 
+<button class="btn" (click)="addCar()"> Add Car </button> 
+<hr>
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let car of cars">
+		<span class="badge">{{ car.id }}</span>
+		{{ car.name }} ( {{ car.year }})
+	</li>
+</ul>

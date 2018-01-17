@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
@@ -22,6 +20,9 @@ import { AddProductItemComponent } from './example-service/add-product-item/add-
 import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 
+import { CarsService } from './cars-service/cars.service';
+import { HttpCarsComponent } from './http-cars/http-cars.component';
+
 
 @NgModule({
   declarations: [
@@ -39,14 +40,19 @@ import { Form2Component } from './form2/form2.component';
     ProductItemComponent,
     AddProductItemComponent,
     Form1Component,
-    Form2Component
+    Form2Component,
+    HttpCarsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [ProductServiceService],
+  providers: [
+    ProductServiceService,
+    CarsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
