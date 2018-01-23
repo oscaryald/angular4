@@ -1,4 +1,5 @@
-
+<h2>Example load from Http</h2>
+<h3>{{carsTitle | async}}</h3>
 <input class="form-control" [(ngModel)]="carName" type="text">
 <hr>
 <button class="btn" (click)="loadCars()"> Load Cars...</button> 
@@ -6,7 +7,9 @@
 <hr>
 <ul class="list-group">
 	<li class="list-group-item" *ngFor="let car of cars">
-		<span class="badge">{{ car.id }}</span>
-		{{ car.name }} ( {{ car.year }})
+		<span class="badge">id: {{ car.id }}</span>
+		{{ car.name }} ( {{ car.year }} )
+		<button class="btn" (click)="setNewYear(car)">Set random year - method Put</button>
+		<button class="btn btn-danger" (click)="deleteCar(car)">Delete Car</button>
 	</li>
 </ul>

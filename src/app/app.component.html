@@ -1,19 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
- 
-</div>
-<h2>Here are some links to help you start: </h2>
-<app-cars></app-cars>
-<br>
-<app-users></app-users>
-<br>
-<h2>Example with service</h2>
-<app-product></app-product>
-<br>
-<h2>Example with Forms1 Template Driven</h2>
-<app-form1></app-form1>
-<h2>Example with Forms2 Reactive</h2>
-<app-form2></app-form2>
-<h2>Example load from Http</h2>
-<app-http-cars></app-http-cars>
+<h1>Example with routing</h1>
+
+<a class="btn btn-primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+<a class="btn btn-primary" routerLink="/users" routerLinkActive="active">Users</a>
+<a class="btn btn-primary" routerLink="/product" routerLinkActive="active">Product (with service)</a>
+<a class="btn btn-primary" routerLink="/form1" routerLinkActive="active">Form 1</a>
+<a class="btn btn-primary" routerLink="/form2" routerLinkActive="active">Form 2</a>
+<a class="btn btn-primary" routerLink="/load-f-http" routerLinkActive="active">Load from Http</a>
+<hr>
+<router-outlet></router-outlet>
+
+
+
+
 

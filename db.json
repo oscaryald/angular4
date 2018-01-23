@@ -1,28 +1,21 @@
 {
+  "title": {
+    "value": "Cars Title from Json"
+  },
   "cars": [
     {
       "id": 1,
       "name": "Audi",
-      "year": "1999"
+      "year": 2004
     },
     {
       "id": 2,
       "name": "Ford",
-      "year": "2001"
+      "year": 2000
     },
     {
-      "id": 3,
       "name": "Mersedez",
-      "year": "2018"
-    },
-    {
-      "name": "aaa",
-      "year": "2018",
-      "id": 4
-    },
-    {
-      "name": "asasas",
-      "year": "2018",
+      "year": 2001,
       "id": 5
     }
   ]

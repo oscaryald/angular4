@@ -18,15 +18,18 @@ export class UsersComponent implements OnInit {
   }] = [
   	{
   		id:1,
-  		name: 'Jojn'
+  		name: 'Jojn',
+      age: '25'
   	},
   	{
   		id:2,
-  		name: 'Sam'
+  		name: 'Sam',
+      age: '22'
   	},
   	{
   		id:3,
-  		name: 'Loyd'
+  		name: 'Loyd',
+      age: '37'
   	}
   ];
 

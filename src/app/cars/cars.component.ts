@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-cars',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 
 export class CarsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -39,7 +40,15 @@ export class CarsComponent implements OnInit {
 
   searchCar:string = '';
 
-  asyncTitle = Observable.of('Async title 3 seconds with pipe').delay(3000)
+  asyncTitle = Observable.of('Async title 3 seconds with pipe').delay(3000);
+
+  changeAuthStatus(status: string){
+  	if(status === 'login'){
+  		this.auth.logIn()
+  	}else{
+  		this.auth.logOut()
+  	}
+  }
 
 
 

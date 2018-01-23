@@ -1,3 +1,8 @@
+<h2>Cars component: </h2>
+<h3>Log in for users page:</h3>
+<button class="btn btn-success"  (click)="changeAuthStatus('login')">Log in</button>
+<button class="btn btn-danger" (click)="changeAuthStatus('logouth')">Log out</button>
+<hr>
 <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
 
 <app-car *ngFor="let car of cars" [carItem]="car">

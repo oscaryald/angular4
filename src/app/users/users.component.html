@@ -1,6 +1,27 @@
-<app-add-user (addObservable)="updateUsers($event)"></app-add-user>
+<h2>Users component: </h2>
+<!-- <app-add-user (addObservable)="updateUsers($event)"></app-add-user> -->
 <hr>
-<app-user *ngFor=" let user of users " [userItem]="user"></app-user>
+
+<!-- <app-user *ngFor=" let user of users " [userItem]="user"></app-user> -->
+<p>Example with routing (navigation for pages)</p>
+<div class="row">
+	<div class="col-xs-6">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let user of users">
+				<a [routerLink]="['/users', user.id]"
+				   [queryParams]="{age: user.age}"
+
+				>{{user.name}}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-xs-6">
+		<router-outlet></router-outlet>
+	</div>
+</div>
+
+
+
 <hr>
 <p>Example for tabs</p>
 <ul class="list-group">

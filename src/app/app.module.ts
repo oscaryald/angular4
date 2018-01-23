@@ -23,6 +23,15 @@ import { Form2Component } from './form2/form2.component';
 import { CarsService } from './cars-service/cars.service';
 import { HttpCarsComponent } from './http-cars/http-cars.component';
 
+import {  AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,17 +50,21 @@ import { HttpCarsComponent } from './http-cars/http-cars.component';
     AddProductItemComponent,
     Form1Component,
     Form2Component,
-    HttpCarsComponent
+    HttpCarsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     ProductServiceService,
-    CarsService
+    CarsService,
+    AuthGuardService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
