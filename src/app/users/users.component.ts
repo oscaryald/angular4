@@ -14,7 +14,8 @@ export class UsersComponent implements OnInit {
 
   users: [{
   	id:number,
-  	name:string
+  	name:string,
+    age:string
   }] = [
   	{
   		id:1,
@@ -33,7 +34,7 @@ export class UsersComponent implements OnInit {
   	}
   ];
 
-  updateUsers( user:{id:number, name: string} ){
+  updateUsers( user:{id:number, name: string, age: string} ){
   	this.users.push(user)
   }
 
